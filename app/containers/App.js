@@ -9,14 +9,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <SidebarMenu />
-        {this.props.children}
+        <SidebarMenu>{this.props.children}</SidebarMenu>
+
         {
           (() => {
-            if (process.env.NODE_ENV !== 'production') {
-              const DevTools = require('./DevTools');
-              return <DevTools />;
-            }
+              if (process.env.NODE_ENV !== 'production') {
+                  const DevTools = require('./DevTools');
+                  return <DevTools />;
+              }
           })()
         }
       </div>
