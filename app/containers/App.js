@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import SidebarMenu from '../components/partials/SidebarMenu';
 
 export default class App extends Component {
   static propTypes = {
@@ -8,6 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <SidebarMenu />
         {this.props.children}
         {
           (() => {
