@@ -10,7 +10,8 @@ export default class CategoryCollection extends Component {
         var columnMeta = [
             {
                 columnName: 'material',
-                displayName: 'Material'
+                displayName: 'Material',
+                cssClassName: 'mdl-data-table__cell--non-numeric'
             },
             {
                 columnName: 'quantity',
@@ -24,7 +25,7 @@ export default class CategoryCollection extends Component {
 
         return (
             <Griddle results={categories}
-                 tableClassName="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+                 tableClassName="mdl-data-table"
                  showFilter={true}
                  enableInfiniteScroll={true}
                  useFixedHeader={true}
