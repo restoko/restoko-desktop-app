@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CategoryItem from './CategoryItem';
+import Griddle from 'griddle-react';
 
 export default class CategoryCollection extends Component {
 
@@ -7,21 +7,30 @@ export default class CategoryCollection extends Component {
     render() {
         const { categories } = this.props;
 
+        var columnMeta = [
+            {
+                columnName: 'material',
+                displayName: 'Material'
+            },
+            {
+                columnName: 'quantity',
+                displayName: 'Quantity'
+            },
+            {
+                columnName: 'unitPrice',
+                displayName: 'Unit Price'
+            }
+        ];
+
         return (
-            <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                <thead>
-                <tr>
-                    <th className="mdl-data-table__cell--non-numeric">Material</th>
-                    <th>Quantity</th>
-                    <th>Unit price</th>
-                </tr>
-                </thead>
-                <tbody>
-                {categories.map(function(category, i) {
-                    return <CategoryItem category={category} key={i} />
-                })}
-                </tbody>
-            </table>
+            <Griddle results={categories}
+                 tableClassName="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+                 showFilter={true}
+                 enableInfiniteScroll={true}
+                 useFixedHeader={true}
+                 bodyHeight={400}
+                 showSettings={true}
+                 columnMetadata={columnMeta} />
         );
     };
 }
