@@ -3,6 +3,8 @@ import ProductItem from './ProductItem';
 
 export default class ProductCollection extends Component {
     render() {
+        const { products } = this.props;
+
         return (
             <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                 <thead>
@@ -14,8 +16,8 @@ export default class ProductCollection extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                {categories.map(function(category, i) {
-                    return <CategoryItem category={category} key={i} />
+                {products.map(function(product, i) {
+                    return <ProductItem product={product} key={i} />
                 })}
                 </tbody>
             </table>
