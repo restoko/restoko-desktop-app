@@ -6,18 +6,23 @@ export default class PageListHeader extends Component {
         const { title, createButtonTitle } = this.props;
 
         return (
-            <header>
-                <div className="mdl-grid">
-                    <div className={style.title}>
-                        <h1>{title}</h1>
+            <div>
+                <header>
+                    <div className="mdl-grid">
+                        <div className={style.title}>
+                            <h1>{title}</h1>
+                        </div>
+                        <div className="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet">
+                            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                                <i className="material-icons">add</i> {createButtonTitle}
+                            </button>
+                        </div>
                     </div>
-                    <div className="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet">
-                        <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                            <i className="material-icons">add</i> {createButtonTitle}
-                        </button>
-                    </div>
-                </div>
-            </header>
+                </header>
+
+                <hr/>
+            </div>
+
         )
     };
 }
