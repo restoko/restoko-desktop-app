@@ -1,0 +1,7 @@
+.title {
+    float: left;
+}
+
+.title h1 {
+    text-transform: uppercase;
+}
