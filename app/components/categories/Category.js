@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CategoryCollection from './CategoryCollection';
 import PageListHeader from '../commons/PageListHeader';
 import PageFormHeader from '../commons/PageFormHeader';
+import FormContainer from '../commons/FormContainer';
 import CategoryCreateForm from './Form';
 
 export default class Category extends Component {
@@ -11,8 +12,6 @@ export default class Category extends Component {
 
     componentDidMount() {
         this.props.getCategories();
-
-        console.log(this.state);
     };
 
     onCreateClick = () => {
@@ -38,7 +37,10 @@ export default class Category extends Component {
         return (
             <div>
                 <PageFormHeader title="Create a category" backButtonTitle="Back to Categories" onBackClick={this.onBackClick}/>
-                <CategoryCreateForm />
+                <FormContainer>
+                    <CategoryCreateForm />
+                </FormContainer>
+
             </div>
         );
     };
