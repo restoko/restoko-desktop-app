@@ -9,17 +9,32 @@ export default class CategoryCollection extends Component {
 
         var columnMeta = [
             {
-                columnName: 'material',
-                displayName: 'Material',
+                columnName: 'id',
+                visible: false
+            },
+            {
+                columnName: 'updated_at',
+                visible: false
+            },
+            {
+                columnName: 'slug',
+                displayName: 'Slug',
                 cssClassName: 'mdl-data-table__cell--non-numeric'
             },
             {
-                columnName: 'quantity',
-                displayName: 'Quantity'
+                columnName: 'name',
+                displayName: 'Name',
+                cssClassName: 'mdl-data-table__cell--non-numeric'
             },
             {
-                columnName: 'unitPrice',
-                displayName: 'Unit Price'
+                columnName: 'description',
+                displayName: 'Description',
+                cssClassName: 'mdl-data-table__cell--non-numeric'
+            },
+            {
+                columnName: 'created_at',
+                displayName: 'Created',
+                cssClassName: 'mdl-data-table__cell--non-numeric'
             }
         ];
 
@@ -31,7 +46,8 @@ export default class CategoryCollection extends Component {
                  useFixedHeader={true}
                  bodyHeight={400}
                  showSettings={true}
-                 columnMetadata={columnMeta} />
+                 columnMetadata={columnMeta}
+                 columns={["name", "slug", "description", "created_at"]} />
         );
     };
 }
