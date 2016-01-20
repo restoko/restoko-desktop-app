@@ -5,3 +5,8 @@
 .title h1 {
     text-transform: uppercase;
 }
+
+.backButton {
+    float: left;
+    margin-right: 20px;
+}

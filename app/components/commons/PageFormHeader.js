@@ -13,7 +13,7 @@ export default class PageListHeader extends Component {
             <div>
                 <header>
                     <div className="mdl-grid">
-                        <div className="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet">
+                        <div className={style.backButton}>
                             <button
                                 className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
                                 onClick={this.clickHandler}>
