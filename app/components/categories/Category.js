@@ -14,6 +14,11 @@ export default class Category extends Component {
         this.props.fetchCategories();
     };
 
+    createCategory = (data) => {
+        this.setState({ showCreateForm: false });
+        this.props.createCategoryRequest(data);
+    };
+
     onCreateClick = () => {
         this.setState({ showCreateForm: true });
     };
@@ -38,7 +43,7 @@ export default class Category extends Component {
             <div>
                 <PageFormHeader title="Create a category" backButtonTitle="Back to Categories" onBackClick={this.onBackClick}/>
                 <FormContainer>
-                    <CategoryCreateForm onBackClick={this.onBackClick} />
+                    <CategoryCreateForm createCategory={this.createCategory} />
                 </FormContainer>
 
             </div>
