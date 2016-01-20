@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { API_URL } from '../api/apiconfig';
+
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const RECV_PRODUCTS_DATA = 'RECV_PRODUCTS_DATA';
 export const RECV_PRODUCTS_ERROR = 'RECV_PRODUCTS_ERROR';

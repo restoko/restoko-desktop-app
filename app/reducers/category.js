@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { GET_CATEGORIES, RECV_CATEGORIES_DATA, RECV_CATEGORIES_ERROR, CREATE_CATEGORY } from '../actions/category';
 
 export default function categories(state = {isLoading: false, data: [], error: false}, action) {
