@@ -19,6 +19,13 @@ export default class Form extends Component {
                         <label className="mdl-textfield__label" htmlFor="description">Description</label>
                         <span className="mdl-textfield__error">Letters and spaces only</span>
                     </div>
+
+                    <button
+                        type="submit"
+                        className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+
+                        Save Category
+                    </button>
                 </form>
             </div>
         );
