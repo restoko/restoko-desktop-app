@@ -62,11 +62,11 @@ export default class Form extends Component {
                         <input
                             className="mdl-textfield__input"
                             type="text" id="name"
-                            name="name" pattern="[A-Z,a-z, ]*"
+                            name="name" pattern="[A-Z,a-z, ,0-9]*"
                             onChange={this.handleNameChange} />
 
                         <label className="mdl-textfield__label" htmlFor="name">Name</label>
-                        <span className="mdl-textfield__error">Letters and spaces only</span>
+                        <span className="mdl-textfield__error">Letters, Numbers and spaces only</span>
                     </div>
 
                     <br/>

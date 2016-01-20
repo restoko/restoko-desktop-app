@@ -14,9 +14,9 @@ export default class Table extends Component {
         this.props.fetchTables();
     };
 
-    createCategory = (data) => {
+    createTable = (data) => {
         this.setState({ showCreateForm: false });
-        this.props.createCategoryRequest(data);
+        this.props.createTableRequest(data);
     };
 
     onCreateClick = () => {
