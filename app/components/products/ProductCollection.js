@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Griddle from 'griddle-react';
-import ProductItem from './ProductItem';
 
 export default class ProductCollection extends Component {
     render() {
