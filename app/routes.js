@@ -4,7 +4,8 @@ import App from './containers/App';
 import HomePage from './containers/HomePage';
 import CategoryPage from './containers/CategoryPage';
 import CounterPage from './containers/CounterPage';
-import ProductPage from './containers/ProductPage'
+import ProductPage from './containers/ProductPage';
+import TablePage from './containers/TablePage';
 
 
 export default (
@@ -12,6 +13,6 @@ export default (
     <IndexRoute component={HomePage} />
     <Route path="/categories" component={CategoryPage} />
     <Route path="/products" component={ProductPage} />
-    <Route path="/counter" component={CounterPage} />
+    <Route path="/tables" component={TablePage} />
   </Route>
 );

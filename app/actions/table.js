@@ -23,32 +23,32 @@ function receiveData(json) {
         type: RECV_TABLES_DATA,
         data: json
     }
-};
+}
 
 function receiveError(json) {
     return {
         type: RECV_TABLES_ERROR,
         data: json
     }
-};
+}
 
 export function fetchTables() {
     return function(dispatch) {
         dispatch(getTables());
 
         return axios({
-            url: API_URL + 'products',
+            url: API_URL + 'tables',
             timeout: 20000,
             method: 'get',
             responseType: 'json'
         })
-            .then(function(response) {
-                dispatch(receiveData(response.data.data));
-            })
-            .catch(function(response){
-                dispatch(receiveError(response.data.data));
-                dispatch(pushState(null,'/error'));
-            });
+        .then(function(response) {
+            dispatch(receiveData(response.data.data));
+        })
+        .catch(function(response){
+            dispatch(receiveError(response.data.data));
+            dispatch(pushState(null,'/error'));
+        });
     }
 }
 
@@ -57,7 +57,7 @@ export function createTableRequest(data) {
         dispatch(createTable());
 
         return axios({
-            url: API_URL + 'products',
+            url: API_URL + 'tables',
             timeout: 20000,
             method: 'post',
             responseType: 'json',
