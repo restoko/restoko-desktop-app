@@ -11,7 +11,7 @@ export default class Category extends Component {
     };
 
     componentDidMount() {
-        this.props.getCategories();
+        this.props.fetchCategories();
     };
 
     onCreateClick = () => {
@@ -29,7 +29,7 @@ export default class Category extends Component {
             return (
                 <div>
                     <PageListHeader title="Categories" createButtonTitle="Create New Category" onCreateClick={this.onCreateClick}/>
-                    <CategoryCollection categories={categories} />
+                    <CategoryCollection categories={categories.data} />
                 </div>
             );
         }
