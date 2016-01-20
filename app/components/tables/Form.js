@@ -5,8 +5,7 @@ import NotificationSystem from 'react-notification-system';
 
 export default class Form extends Component {
     state = {
-        name: null,
-        change: null
+        name: null
     };
 
     notificationSystem = null;
@@ -17,8 +16,7 @@ export default class Form extends Component {
 
     clickHandler = () => {
         let data = {
-            name: this.state.name,
-            description: this.state.description
+            name: this.state.name
         };
 
         if (this.validateData()) {
@@ -34,12 +32,6 @@ export default class Form extends Component {
 
         if (this.state.name == null) {
             message = 'Field Name is required<br/>';
-
-            errorFound = true;
-        }
-
-        if (this.state.description == null) {
-            message += 'Field Description is required';
 
             errorFound = true;
         }
@@ -60,10 +52,6 @@ export default class Form extends Component {
         this.setState({ name: e.target.value });
     };
 
-    handleDescriptionChange = (e) => {
-        this.setState({ description: e.target.value });
-    };
-
     render() {
         return (
             <div>
@@ -82,16 +70,6 @@ export default class Form extends Component {
                     </div>
 
                     <br/>
-
-                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input className="mdl-textfield__input"
-                               type="text" id="description" name="description"
-                               pattern="[A-Z,a-z, ]*"
-                               onChange={this.handleDescriptionChange} />
-
-                        <label className="mdl-textfield__label" htmlFor="description">Description</label>
-                        <span className="mdl-textfield__error">Letters and spaces only</span>
-                    </div>
 
                     <button
                         type="button"

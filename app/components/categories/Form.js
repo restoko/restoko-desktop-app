@@ -6,7 +6,7 @@ import NotificationSystem from 'react-notification-system';
 export default class Form extends Component {
     state = {
         name: null,
-        change: null
+        description: null
     };
 
     notificationSystem = null;
