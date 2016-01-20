@@ -38,7 +38,7 @@ export default class Category extends Component {
             <div>
                 <PageFormHeader title="Create a category" backButtonTitle="Back to Categories" onBackClick={this.onBackClick}/>
                 <FormContainer>
-                    <CategoryCreateForm />
+                    <CategoryCreateForm onBackClick={this.onBackClick} />
                 </FormContainer>
 
             </div>

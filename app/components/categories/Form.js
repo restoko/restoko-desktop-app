@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Form extends Component {
-    render() {
+    clickHandler = () => {
+        axios.get('http://localhost:8000/api/v1/categories').then(function(response) {
+            console.log(response);
+        });
 
+        this.props.onBackClick();
+    };
+
+    render() {
         return (
             <div>
                 <form action="#">
@@ -21,8 +29,9 @@ export default class Form extends Component {
                     </div>
 
                     <button
-                        type="submit"
-                        className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                        type="button"
+                        className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                        onClick={this.clickHandler}>
 
                         Save Category
                     </button>
