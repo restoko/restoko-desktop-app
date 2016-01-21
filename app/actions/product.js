@@ -6,10 +6,18 @@ export const RECV_PRODUCTS_DATA = 'RECV_PRODUCTS_DATA';
 export const RECV_PRODUCTS_ERROR = 'RECV_PRODUCTS_ERROR';
 export const CREATE_PRODUCT = 'CREATE_PRODUCT';
 
+import { fetchCategories } from './category';
+
 export function getProducts() {
     return {
         type: GET_PRODUCTS
     };
+}
+
+export function fetchCategoriesForSelect() {
+    return function(dispatch) {
+        dispatch(fetchCategories());
+    }
 }
 
 function createProduct() {
@@ -23,14 +31,14 @@ function receiveData(json) {
         type: RECV_PRODUCTS_DATA,
         data: json
     }
-};
+}
 
 function receiveError(json) {
     return {
         type: RECV_PRODUCTS_ERROR,
         data: json
     }
-};
+}
 
 export function fetchProducts() {
     return function(dispatch) {

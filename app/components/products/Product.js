@@ -12,11 +12,12 @@ export default class Product extends Component {
 
     componentDidMount() {
         this.props.fetchProducts();
+        this.props.fetchCategoriesForSelect();
     };
 
-    createCategory = (data) => {
+    createProduct = (data) => {
         this.setState({ showCreateForm: false });
-        this.props.createCategoryRequest(data);
+        this.props.createProductRequest(data);
     };
 
     onCreateClick = () => {
@@ -28,7 +29,7 @@ export default class Product extends Component {
     };
 
     render() {
-        const { products } = this.props;
+        const { products, categories } = this.props;
 
         if (! this.state.showCreateForm) {
             return (
@@ -43,7 +44,7 @@ export default class Product extends Component {
             <div>
                 <PageFormHeader title="Create a product" backButtonTitle="Back to Products" onBackClick={this.onBackClick}/>
                 <FormContainer>
-                    <ProductCreateForm createProduct={this.createProduct} />
+                    <ProductCreateForm categories={categories.data} createProduct={this.createProduct} />
                 </FormContainer>
 
             </div>

@@ -23,14 +23,14 @@ function receiveData(json) {
         type: RECV_CATEGORIES_DATA,
         data: json
     }
-};
+}
 
 function receiveError(json) {
     return {
         type: RECV_CATEGORIES_ERROR,
         data: json
     }
-};
+}
 
 export function fetchCategories() {
     return function(dispatch) {

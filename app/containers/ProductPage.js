@@ -5,7 +5,8 @@ import * as ProductActions from '../actions/product';
 
 function mapStateToProps(state) {
     return {
-        products: state.product
+        products: state.product,
+        categories: state.category
     };
 }
 
