@@ -1,0 +1,21 @@
+.tableList {
+    width: 100%;
+    background-color: #a36114;
+}
+
+.tableList h1 {
+    color: #fff472;
+    font-size: 20px;
+    text-align: center;
+}
+
+.productList {
+    width: 100%;
+    background-color: #424242;
+}
+
+.productList h1 {
+    color: #ffaa2d;
+    font-size: 20px;
+    text-align: center;
+}

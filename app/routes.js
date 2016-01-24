@@ -6,6 +6,7 @@ import CategoryPage from './containers/CategoryPage';
 import CounterPage from './containers/CounterPage';
 import ProductPage from './containers/ProductPage';
 import TablePage from './containers/TablePage';
+import PosPage from './containers/PosPage';
 
 
 export default (
@@ -14,5 +15,6 @@ export default (
     <Route path="/categories" component={CategoryPage} />
     <Route path="/products" component={ProductPage} />
     <Route path="/tables" component={TablePage} />
+    <Route path="/pos" component={PosPage} />
   </Route>
 );
