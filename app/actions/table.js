@@ -46,6 +46,7 @@ export function fetchTables() {
             dispatch(receiveData(response.data.data));
         })
         .catch(function(response){
+            console.log(response);
             dispatch(receiveError(response.data.data));
             dispatch(pushState(null,'/error'));
         });

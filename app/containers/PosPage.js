@@ -5,8 +5,6 @@ import * as PosActions from '../actions/pos';
 
 function mapStateToProps(state) {
     return {
-        products: state.product,
-        categories: state.category,
         tables: state.table
     };
 }

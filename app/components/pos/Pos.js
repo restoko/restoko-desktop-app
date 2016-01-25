@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
 import style from './Pos.module.css';
 import PosTableItem from './PosTableItem'
+import PosProductItem from './PosProductItem';
+import axios from 'axios';
+import { API_URL } from '../../api/apiconfig';
 
 export default class Pos extends Component {
+    state = {
+        products: [],
+        total: 0
+    };
 
     componentDidMount() {
         this.props.fetchTablesDispatch();
+    }
+
+    calculateTotal = (items) => {
+        var total = 0;
+        for (var i = 0; i < items.length; i++) {
+            total += items[i].quantity * items[i].product.price
+        }
+
+        this.setState({ total: total});
+    };
+
+    getProduct = (tableId) => {
+        axios({
+            url: API_URL + 'carts/' + tableId,
+            timeout: 20000,
+            method: 'get',
+            responseType: 'json'
+        })
+        .then((response) => {
+            this.setState({ products: response.data.data.items});
+            this.calculateTotal(response.data.data.items);
+        })
+        .catch(function(response){
+            console.log(response);
+            console.log('ERROR ON GETTING CART');
+        });
     };
 
     render() {
@@ -13,32 +46,78 @@ export default class Pos extends Component {
 
         return (
             <div className="mdl-grid">
-                <div className="mdl-cell mdl-cell--7-col mdl-cell--5-col-tablet mdl-cell--3-col-phone">
+                <div className="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--3-col-phone">
                     <div className={style.tableList}>
                         <h1>Tables</h1>
                     </div>
 
                     <div>
-                        <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                        <table className="mdl-data-table">
                             <thead>
-                                <tr>
-                                    <th className="mdl-data-table__cell--non-numeric">Table</th>
-                                    <th className="mdl-data-table__cell--non-numeric">Status</th>
-                                </tr>
+                            <tr>
+                                <th className="mdl-data-table__cell--non-numeric">Table</th>
+                                <th className="mdl-data-table__cell--non-numeric">Status</th>
+                            </tr>
                             </thead>
-                            <tbody>
-                                {tables.data.map(function(table, i) {
-                                    return <PosTableItem status={table.status} name={table.name} tableId={table.id} />
+                        </table>
+
+                        <div style={{ maxHeight: '400px', overflowY: 'scroll'}}>
+                            <table className="mdl-data-table">
+                                <tbody>
+                                {tables.data.map((table, i) => {
+                                    return <PosTableItem key={i} status={table.status} name={table.name} tableId={table.id} getProduct={this.getProduct} />
                                 })}
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div className="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--1-col-phone">
+                <div className="mdl-cell mdl-cell--7-col mdl-cell--5-col-tablet mdl-cell--1-col-phone">
                     <div className={style.productList}>
                         <h1>Products</h1>
                     </div>
+
+                    <div>
+                        <table className="mdl-data-table">
+                            <thead>
+                            <tr>
+                                <th className="mdl-data-table__cell--non-numeric">Quantity</th>
+                                <th className="mdl-data-table__cell--non-numeric">Product</th>
+                                <th className="mdl-data-table__cell--non-numeric">Unit Price</th>
+                            </tr>
+                            </thead>
+                        </table>
+
+                        <div style={{ minHeight: '350px', maxHeight: '350px', overflowY: 'scroll'}}>
+                            <table className="mdl-data-table">
+                                <tbody>
+                                {this.state.products.map(function(product, i) {
+                                    return <PosProductItem key={i} item={product} />
+                                })}
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <table className="mdl-data-table">
+                            <tfoot>
+                                <tr>
+                                    <td className="mdl-data-table__cell--non-numeric"><strong> Total</strong></td>
+                                    <td></td>
+                                    <td>{this.state.total} PHP</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div style={{marginTop: '20px', float: 'right'}}>
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Make Selected Table Available</button> &nbsp;
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Send Invoice</button> &nbsp;
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Checkout</button> &nbsp;
                 </div>
             </div>
         )

@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import style from './Pos.module.css';
 
 export default class PosTableItem extends Component {
+    clickHandler = (e) => {
+        this.props.getProduct(this.props.tableId);
+    };
+
     render() {
         if (this.props.status == 'available') {
             return (
-                <tr>
+                <tr onClick={this.clickHandler}>
                     <td className="mdl-data-table__cell--non-numeric">{this.props.name}</td>
                     <td className="mdl-data-table__cell--non-numeric">
                         <span className={style.available}>available</span>
@@ -16,7 +20,7 @@ export default class PosTableItem extends Component {
 
         if (this.props.status == 'occupied') {
             return (
-                <tr>
+                <tr onClick={this.clickHandler}>
                     <td className="mdl-data-table__cell--non-numeric">{this.props.name}</td>
                     <td className="mdl-data-table__cell--non-numeric">
                         <span className={style.occupied}>occupied</span>
@@ -27,7 +31,7 @@ export default class PosTableItem extends Component {
 
         if (this.props.status == 'cleaning') {
             return (
-                <tr>
+                <tr onClick={this.clickHandler}>
                     <td className="mdl-data-table__cell--non-numeric">{this.props.name}</td>
                     <td className="mdl-data-table__cell--non-numeric">
                         <span className={style.cleaning}>cleaning</span>
@@ -38,7 +42,7 @@ export default class PosTableItem extends Component {
 
         if (this.props.status == 'requesting_for_billout') {
             return (
-                <tr>
+                <tr onClick={this.clickHandler}>
                     <td className="mdl-data-table__cell--non-numeric">{this.props.name}</td>
                     <td className="mdl-data-table__cell--non-numeric">
                         <span className={style.requestBillout}>requesting For Billout</span>
