@@ -165,3 +165,7 @@ table {
 .filter-container {
     margin-bottom: 20px;
 }
+
+tbody tr td:hover {
+    cursor: pointer;
+}

@@ -4,7 +4,7 @@
 }
 
 .tableList h1 {
-    color: #fff472;
+    color: #fff;
     font-size: 20px;
     text-align: center;
 }
@@ -15,7 +15,31 @@
 }
 
 .productList h1 {
-    color: #ffaa2d;
+    color: #fff;
     font-size: 20px;
     text-align: center;
+}
+
+.available {
+    background-color: #29c824;
+    color: #fff;
+    padding: 5px;
+}
+
+.occupied {
+    background-color: #c81616;
+    color: #fff;
+    padding: 5px;
+}
+
+.cleaning {
+    background-color: #525151;
+    color: #fff;
+    padding: 5px;
+}
+
+.requestBillout {
+    background-color: #c8991a;
+    color: #fff;
+    padding: 5px;
 }
