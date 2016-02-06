@@ -13,11 +13,12 @@ export default class PageListHeader extends Component {
             <div>
                 <header>
                     <div className="mdl-grid">
-                        <div className={style.title}>
+                        <div className="mdl-cell mdl-cell--9-col mdl-cell--9-col-tablet">
                             <h1>{title}</h1>
                         </div>
-                        <div className="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet">
+                        <div className="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet">
                             <button
+                                style={{width: "100%", marginTop: "6px"}}
                                 className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
                                 onClick={this.clickHandler}>
 

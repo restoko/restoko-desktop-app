@@ -2,6 +2,10 @@
     float: left;
 }
 
+.button {
+    float: right;
+}
+
 .title h1 {
     text-transform: uppercase;
 }
