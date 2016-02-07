@@ -22,6 +22,7 @@ export default class SidebarMenu extends Component {
                         <Link to="/categories" className="mdl-navigation__link">Categories</Link>
                         <Link to="/products" className="mdl-navigation__link">Products</Link>
                         <Link to="/tables" className="mdl-navigation__link">Tables</Link>
+                        <Link to="/discounts" className="mdl-navigation__link">Discounts</Link>
                         <Link to="/pos" className="mdl-navigation__link">POS</Link>
                         <Link to="/kitchen" className="mdl-navigation__link">Kitchen</Link>
                         <Link to="/" className="mdl-navigation__link">Reports</Link>
