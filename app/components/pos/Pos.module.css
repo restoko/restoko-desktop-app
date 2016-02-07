@@ -1,6 +1,6 @@
 .tableList {
     width: 100%;
-    background-color: #a36114;
+    background-color: #B16234;
 }
 
 .tableList h1 {
@@ -11,7 +11,7 @@
 
 .productList {
     width: 100%;
-    background-color: #424242;
+    background-color: #B16234;
 }
 
 .productList h1 {
@@ -42,4 +42,8 @@
     background-color: #c8991a;
     color: #fff;
     padding: 5px;
+}
+
+.tableRow {
+    background-color: #B16234;
 }

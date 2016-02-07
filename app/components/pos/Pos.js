@@ -63,7 +63,7 @@ export default class Pos extends Component {
                             </thead>
                         </table>
 
-                        <div style={{ maxHeight: '400px', overflowY: 'scroll'}}>
+                        <div style={{ maxHeight: '355px', overflowY: 'scroll'}}>
                             <table className="mdl-data-table">
                                 <tbody>
                                 {tables.data.map((table, i) => {
@@ -73,6 +73,14 @@ export default class Pos extends Component {
                                 </tbody>
                             </table>
                         </div>
+
+                        <table className="mdl-data-table">
+                            <tfoot>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
                 <div className="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--1-col-phone">
@@ -91,7 +99,7 @@ export default class Pos extends Component {
                             </thead>
                         </table>
 
-                        <div style={{ minHeight: '255px', maxHeight: '255px', overflowY: 'scroll'}}>
+                        <div style={{ minHeight: '210px', maxHeight: '210px', overflowY: 'scroll'}}>
                             <table className="mdl-data-table">
                                 <tbody>
                                 {this.state.products.map(function(product, i) {
@@ -104,19 +112,24 @@ export default class Pos extends Component {
 
                         <table className="mdl-data-table">
                             <tfoot>
-                                <tr>
+                                <tr className={style.tableRow}>
                                     <td className="mdl-data-table__cell--non-numeric"><strong> Net Total</strong></td>
-                                    <td></td>
+                                    <td>&nbsp;</td>
                                     <td>{this.state.total} PHP</td>
                                 </tr>
-                                <tr>
+                                <tr className={style.tableRow}>
                                     <td className="mdl-data-table__cell--non-numeric"><strong> Tax</strong></td>
-                                    <td></td>
+                                    <td>&nbsp;</td>
                                     <td>{this.state.total} PHP</td>
                                 </tr>
-                                <tr>
+                                <tr className={style.tableRow}>
+                                    <td className="mdl-data-table__cell--non-numeric"><strong> Discount</strong></td>
+                                    <td>&nbsp;</td>
+                                    <td>{this.state.total} PHP</td>
+                                </tr>
+                                <tr className={style.tableRow}>
                                     <td className="mdl-data-table__cell--non-numeric"><strong> Total</strong></td>
-                                    <td></td>
+                                    <td>&nbsp;</td>
                                     <td>{this.state.total} PHP</td>
                                 </tr>
                             </tfoot>
