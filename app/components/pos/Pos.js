@@ -76,7 +76,7 @@ export default class Pos extends Component {
 
                         <table className="mdl-data-table">
                             <tfoot>
-                            <tr>
+                            <tr className={style.tableRow}>
                                 <td>&nbsp;</td>
                             </tr>
                             </tfoot>
