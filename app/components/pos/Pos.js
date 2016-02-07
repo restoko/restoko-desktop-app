@@ -4,11 +4,13 @@ import PosTableItem from './PosTableItem'
 import PosProductItem from './PosProductItem';
 import axios from 'axios';
 import { API_URL } from '../../api/apiconfig';
+import PaymentDialog from './Payment';
 
 export default class Pos extends Component {
     state = {
         products: [],
-        total: 0
+        total: 0,
+        isPaymentModalOpen: false
     };
 
     componentDidMount() {
@@ -123,11 +125,13 @@ export default class Pos extends Component {
                 </div>
 
                 <hr/>
-
+                <div style={{clear: 'both'}}></div>
                 <div style={{marginTop: '20px', float: 'right'}}>
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Make Selected Table Available</button> &nbsp;
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Send Invoice</button> &nbsp;
-                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Checkout</button> &nbsp;
+                    <button onClick={() => {this.setState({isPaymentModalOpen: true})}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Proceed to Payment</button> &nbsp;
+
+                    <PaymentDialog open={this.state.isPaymentModalOpen} />
                 </div>
             </div>
         )
