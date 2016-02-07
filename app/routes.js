@@ -7,6 +7,7 @@ import CounterPage from './containers/CounterPage';
 import ProductPage from './containers/ProductPage';
 import TablePage from './containers/TablePage';
 import PosPage from './containers/PosPage';
+import KitchenPage from './containers/KitchenPage';
 
 
 export default (
@@ -16,5 +17,6 @@ export default (
     <Route path="/products" component={ProductPage} />
     <Route path="/tables" component={TablePage} />
     <Route path="/pos" component={PosPage} />
+      <Route path="/kitchen" component={KitchenPage} />
   </Route>
 );
