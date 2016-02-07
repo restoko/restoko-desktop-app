@@ -129,6 +129,7 @@ export default class Pos extends Component {
                 <div style={{marginTop: '20px', float: 'right'}}>
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Make Selected Table Available</button> &nbsp;
                     <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Send Invoice</button> &nbsp;
+                    <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Apply Discount</button> &nbsp;
                     <button onClick={() => {this.setState({isPaymentModalOpen: true})}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Proceed to Payment</button> &nbsp;
 
                     <PaymentDialog open={this.state.isPaymentModalOpen} />
