@@ -73,7 +73,7 @@ export default class Pos extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="mdl-cell mdl-cell--9-col mdl-cell--5-col-tablet mdl-cell--1-col-phone">
+                <div className="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--1-col-phone">
                     <div className={style.productList}>
                         <h1>Products</h1>
                     </div>
@@ -84,12 +84,12 @@ export default class Pos extends Component {
                             <tr>
                                 <th className="mdl-data-table__cell--non-numeric">Quantity</th>
                                 <th className="mdl-data-table__cell--non-numeric">Product</th>
-                                <th className="mdl-data-table__cell--non-numeric">Unit Price</th>
+                                <th>Unit Price</th>
                             </tr>
                             </thead>
                         </table>
 
-                        <div style={{ minHeight: '350px', maxHeight: '350px', overflowY: 'scroll'}}>
+                        <div style={{ minHeight: '255px', maxHeight: '255px', overflowY: 'scroll'}}>
                             <table className="mdl-data-table">
                                 <tbody>
                                 {this.state.products.map(function(product, i) {
@@ -102,6 +102,16 @@ export default class Pos extends Component {
 
                         <table className="mdl-data-table">
                             <tfoot>
+                                <tr>
+                                    <td className="mdl-data-table__cell--non-numeric"><strong> Net Total</strong></td>
+                                    <td></td>
+                                    <td>{this.state.total} PHP</td>
+                                </tr>
+                                <tr>
+                                    <td className="mdl-data-table__cell--non-numeric"><strong> Tax</strong></td>
+                                    <td></td>
+                                    <td>{this.state.total} PHP</td>
+                                </tr>
                                 <tr>
                                     <td className="mdl-data-table__cell--non-numeric"><strong> Total</strong></td>
                                     <td></td>
